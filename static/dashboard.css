@@ -207,10 +207,10 @@
 
 .featured-product {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 40px;
+    grid-template-columns: 350px 1fr;
+    gap: 50px;
     background-color: #1a1a1a;
-    padding: 40px;
+    padding: 50px;
     border-left: 3px solid var(--blue);
     align-items: center;
 }
