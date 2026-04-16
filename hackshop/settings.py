@@ -7,7 +7,7 @@ load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'password123')
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
