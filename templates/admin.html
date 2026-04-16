@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HackShop - Management{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'admin.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="admin-header">
+    <h1>Panneau de Gestion</h1>
+</section>
+
+<section class="admin-container">
+    <main class="admin-content">
+        <section class="admin-section">
+            <h2>Données secrètes</h2>
+            <div class="admin-secrets">
+                <p><strong>FLAG:</strong> <code>{{ flag }}</code></p>
+                <p><strong>Carte bancaire:</strong> <code>{{ card }}</code></p>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <h2>Utilisateurs</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Nom d'utilisateur</th>
+                        <th>Mot de passe</th>
+                        <th>Rôle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in usrs %}
+                    <tr>
+                        <td>{{ u.1 }}</td>
+                        <td><code>{{ u.2 }}</code></td>
+                        <td>{{ u.3 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="admin-section">
+            <h2>Actions</h2>
+            <div class="admin-actions">
+                <form method="POST" action="/admin_clear_forum/">
+                    {% csrf_token %}
+                    <button type="submit" class="admin-action-btn admin-action-danger" onclick="return confirm('Êtes-vous sûr de vouloir vider le forum ? Cette action est irréversible.');">🗑️ Vider le forum</button>
+                </form>
+                <a href="/manage_bans/" class="admin-action-btn">🚫 Gérer les bans</a>
+            </div>
+        </section>
+    </main>
+</section>
+{% endblock %}

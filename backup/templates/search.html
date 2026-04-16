@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>RECHERCHE!!!</h1>
+<form method="GET">
+<input type="text" name="q" value="{{q}}" placeholder="RECHERCHER UN UTILISATEUR">
+<button type="submit">CHERCHER!!!</button>
+</form>
+{% if err %}<div class="err">ERREUR SQL: {{err}}</div>{% endif %}
+{% if q %}
+<p style="font-size:20px">RESULTATS POUR: <b>{{q|safe}}</b></p>
+<ul style="font-size:18px">
+{% for r in results %}
+<li style="color:purple">{{r.1}} --- {{r.3}}</li>
+{% empty %}
+<li style="color:red">AUCUN RESULTAT!!!</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

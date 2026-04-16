@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>CONNEXION!!!</h1>
+{% if e %}<div class="err">ERREUR: {{e}}<br>{% if q %}REQUETE SQL: {{q}}{% endif %}</div>{% endif %}
+<form method="POST">
+{% csrf_token %}
+<p>NOM D UTILISATEUR:</p>
+<input type="text" name="username" placeholder="ex: admin">
+<p>MOT DE PASSE:</p>
+<input type="password" name="password" placeholder="mot de passe">
+<br><br>
+<button type="submit">SE CONNECTER!!!</button>
+</form>
+<br>
+<p style="color:purple;font-size:14px">comptes de test: admin/admin, alice/1234, bob/password</p>
+{% endblock %}

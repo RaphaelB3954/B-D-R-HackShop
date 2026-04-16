@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HackShop{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-text">HackShop</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/shop/">Shop</a></li>
+                    <li><a href="/forum/">Forum</a></li>
+                    {% if u %}
+                        <li><a href="/dashboard/">{{ u }}</a></li>
+                        {% if r == 'admin' %}<li><a href="/admin-panel/">Management</a></li>{% endif %}
+                        <li><a href="/logout/">Déconnexion</a></li>
+                    {% else %}
+                        <li><a href="/login/">Connexion</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 HackShop. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

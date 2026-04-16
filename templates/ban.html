@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HackShop - Adresse bannie{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+<style>
+    .ban-container {
+        max-width: 600px;
+        margin: 60px auto;
+        padding: 40px;
+        background: #fff;
+        border: 2px solid #d63031;
+        text-align: center;
+    }
+
+    .ban-icon {
+        font-size: 64px;
+        margin-bottom: 20px;
+    }
+
+    .ban-title {
+        font-size: 32px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        color: #000;
+    }
+
+    .ban-reason {
+        font-size: 16px;
+        color: #1a1a1a;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .ban-info {
+        background: #f5f5f5;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-left: 3px solid #2563eb;
+    }
+
+    .ban-info p {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .ban-info strong {
+        color: #2563eb;
+    }
+
+    .ban-button {
+        background: #000;
+        color: #fff;
+        border: none;
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .ban-button:active {
+        background: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+        .ban-container {
+            margin: 30px 15px;
+            padding: 25px;
+        }
+
+        .ban-title {
+            font-size: 24px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="ban-container">
+    <div class="ban-icon">🚫</div>
+    <h1 class="ban-title">Accès refusé</h1>
+</section>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HackShop - Gestion des bans{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'manage_bans.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="manage-bans-header">
+    <h1>Gestion des adresses IP bannies</h1>
+    <p>Contrôle et révocation des bans</p>
+</section>
+
+<section class="manage-bans-container">
+    <div class="bans-section">
+        <h2>Bans actifs</h2>
+        <div class="bans-table-container">
+            {% if bans %}
+                <table class="bans-table">
+                    <thead>
+                        <tr>
+                            <th>Adresse IP</th>
+                            <th>Date du Ban</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ban in bans %}
+                            <tr>
+                                <td class="ip-cell">{{ ban.ip }}</td>
+                                <td>{{ ban.timestamp }}</td>
+                                <td>
+                                    <form method="POST" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="unban_ip" value="{{ ban.ip }}">
+                                        <button type="submit" class="unban-btn">Débannir</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p style="text-align: center; color: #999; padding: 20px;">Aucune IP bannie pour le moment</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="back-link">
+        <a href="/admin-panel/">← Retour au panneau d'administration</a>
+    </div>
+</section>
+{% endblock %}

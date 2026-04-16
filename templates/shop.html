@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HackShop - Shop{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'shop.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="shop-header">
+    <h1>Boutique</h1>
+    <p>Découvrez notre sélection complète</p>
+</section>
+
+<section class="shop-container">
+    <div class="products-section">
+        <div class="shop-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/2358720/header.jpg" alt="Black Myth: Wukong">
+                </div>
+                <div class="product-info">
+                    <h3>Black Myth: Wukong</h3>
+                    <p class="product-source">Steam</p>
+                    <p class="product-description">Action RPG épique avec combat dynamique, mondes explorables et boss mémorables basés sur la mythologie classique chinoise.</p>
+                    <p class="product-price">59,99€</p>
+                    <a href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/" target="_blank" class="buy-btn">Voir sur Steam</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/526870/header.jpg" alt="Satisfactory">
+                </div>
+                <div class="product-info">
+                    <h3>Satisfactory</h3>
+                    <p class="product-source">Steam</p>
+                    <p class="product-description">Jeu de construction d'usine en première personne. Construisez, automatisez et optimisez vos chaînes de production dans un monde complet.</p>
+                    <p class="product-price">19,99€</p>
+                    <a href="https://store.steampowered.com/app/526870/Satisfactory/" target="_blank" class="buy-btn">Voir sur Steam</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyberpunk 2077">
+                </div>
+                <div class="product-info">
+                    <h3>Cyberpunk 2077</h3>
+                    <p class="product-source">Steam</p>
+                    <p class="product-description">RPG futuriste immersif dans la ville de Night City. Créez votre personnage, explorez des quartiers vivants et vivez des histoires complexes.</p>
+                    <p class="product-price">59,99€</p>
+                    <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/" target="_blank" class="buy-btn">Voir sur Steam</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

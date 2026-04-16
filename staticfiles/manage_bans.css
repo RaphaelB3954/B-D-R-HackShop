@@ -1,0 +1,237 @@
+.manage-bans-header {
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    color: var(--white);
+    padding: 80px 40px;
+    border-bottom: 1px solid var(--dark-gray);
+    text-align: center;
+}
+
+.manage-bans-header h1 {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.manage-bans-header p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--light-gray);
+}
+
+.manage-bans-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    background-color: #0a0a0a;
+}
+
+.bans-section {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+}
+
+.bans-section h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+}
+
+.ban-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group-ban {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group-ban label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.form-group-ban input,
+.form-group-ban select {
+    padding: 10px 12px;
+    border: 1px solid #444444;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 300;
+    font-family: inherit;
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+.form-group-ban input:focus,
+.form-group-ban select:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.btn-submit-ban {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 12px 0;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.btn-submit-ban:active {
+    background-color: var(--black);
+}
+
+.bans-list-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bans-list-section h2 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.bans-table-container {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.bans-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.bans-table thead {
+    background-color: #252525;
+    border-bottom: 1px solid #333333;
+}
+
+.bans-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.bans-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #333333;
+    font-weight: 300;
+}
+
+.bans-table tr:last-child td {
+    border-bottom: none;
+}
+
+.ip-address {
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: var(--radius-md);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge.active {
+    background-color: var(--light-gray);
+    color: var(--blue);
+}
+
+.badge.expired {
+    background-color: #f5f5f5;
+    color: var(--dark-gray);
+}
+
+.btn-revoke,
+.btn-delete {
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+}
+
+.btn-revoke:active,
+.btn-delete:active {
+    background-color: var(--blue);
+}
+
+.btn-delete {
+    background-color: var(--dark-gray);
+}
+
+@media (max-width: 1024px) {
+    .manage-bans-container {
+        grid-template-columns: 1fr;
+    }
+
+    .bans-section {
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .manage-bans-header {
+        padding: 60px 20px;
+    }
+
+    .manage-bans-header h1 {
+        font-size: 32px;
+    }
+
+    .manage-bans-container {
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .bans-table {
+        font-size: 12px;
+    }
+
+    .bans-table th,
+    .bans-table td {
+        padding: 8px 12px;
+    }
+
+    .btn-revoke,
+    .btn-delete {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+}

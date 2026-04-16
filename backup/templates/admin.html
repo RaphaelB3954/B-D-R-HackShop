@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>PANNEAU ADMIN TOP SECRET!!!</h1>
+<p style="font-size:20px;color:red">ATTENTION ZONE RESERVEE AUX ADMINS NORMALEMENT!!!</p>
+<h2>LISTE DES UTILISATEURS:</h2>
+<table>
+<tr><th>ID</th><th>USERNAME</th><th>PASSWORD</th><th>ROLE</th></tr>
+{% for u in usrs %}
+<tr><td>{{u.0}}</td><td>{{u.1}}</td><td style="color:red;font-size:20px">{{u.2}}</td><td>{{u.3}}</td></tr>
+{% endfor %}
+</table>
+<h2>DONNEES SECRETES:</h2>
+{% for s in secs %}
+<div class="err" style="font-size:20px">{{s.1}}</div>
+{% endfor %}
+{% endblock %}

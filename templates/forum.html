@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HackShop - Forum{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'forum.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="forum-header">
+    <h1>Forum</h1>
+    <p>Communauté HackShop</p>
+</section>
+
+<section class="forum-container">
+    <div class="forum-actions">
+        {% if u %}
+        <form method="POST" class="forum-form">
+            {% csrf_token %}
+            <textarea name="message" class="forum-textarea" placeholder="Écrivez votre message..." maxlength="500" required></textarea>
+            <button type="submit" class="forum-submit">Poster</button>
+        </form>
+        {% else %}
+        <p style="color: #999; margin-bottom: 30px;">Connectez-vous pour poster un message</p>
+        {% endif %}
+    </div>
+
+    <div class="forum-threads">
+        {% if msgs %}
+            {% for m in msgs %}
+            <div class="thread">
+                <h3 class="thread-title">{{ m.1 }}</h3>
+                <p class="thread-excerpt">{{ m.2 }}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+        <p style="color: #999; text-align: center; padding: 40px;">Aucun message pour le moment</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

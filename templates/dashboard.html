@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HackShop - Tableau de bord{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="dashboard-header">
+    <h1>Bienvenue {{ u }}</h1>
+    {% if r == 'admin' %}<p>Rôle: <strong>Administrateur</strong></p>{% endif %}
+</section>
+
+<section class="dashboard-container">
+    <main class="dashboard-content" style="width: 100%;">
+        <section class="dashboard-section">
+            <h2>Notre coup de cœur</h2>
+            <div class="featured-product">
+                <div class="featured-product-image">
+                    <img src="https://cdn.akamai.steamstatic.com/steam/apps/2358720/header.jpg" alt="Black Myth: Wukong">
+                </div>
+                <div class="featured-product-info">
+                    <h3>Black Myth: Wukong</h3>
+                    <p>Action RPG épique avec combat dynamique et monde explorable. Une expérience narrative immersive basée sur la mythologie classique chinoise avec des boss mémorables.</p>
+                    <p class="featured-price">59,99€</p>
+                    <a href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/" target="_blank" class="featured-btn">Découvrir sur Steam</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</section>
+{% endblock %}

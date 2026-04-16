@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>BONJOUR {{u}}!!!</h1>
+<p style="font-size:20px">TON ROLE: <b style="color:red">{{r}}</b></p>
+{% if r == 'admin' %}<a href="/admin-panel/"><button>PANNEAU ADMIN SECRET!!!</button></a>{% endif %}
+{% endblock %}

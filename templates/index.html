@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HackShop - Accueil{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">HackShop</h1>
+        <p class="hero-subtitle">La plateforme e-commerce minimaliste</p>
+        <p class="hero-description">Découvrez notre sélection de produits avec un design épuré et une expérience utilisateur optimale</p>
+        <div class="hero-buttons">
+            <a href="/shop/" class="btn-primary">Explorer les produits</a>
+            <a href="/forum/" class="btn-secondary">Forum</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <h2 class="section-title">Pourquoi acheter chez nous ?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">01</div>
+            <h3>Design épuré</h3>
+            <p>Une interface minimaliste et intuitive pour une meilleure expérience utilisateur</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">02</div>
+            <h3>Rapide et simple</h3>
+            <p>Navigation fluide sans distractions, juste l'essentiel</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">03</div>
+            <h3>Moderne</h3>
+            <p>Technologie de pointe avec un design contemporain</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Rejoindre la communauté</h2>
+    <p>Accédez au forum et partagez avec d'autres utilisateurs</p>
+    <a href="/forum/" class="btn-cta">Aller au forum</a>
+</section>
+{% endblock %}
