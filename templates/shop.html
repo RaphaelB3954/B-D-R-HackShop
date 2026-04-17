@@ -13,6 +13,7 @@
     <p>Découvrez notre sélection complète</p>
 </section>
 
+<meta name="referrer" content="no-referrer-when-downgrade">
 <section class="shop-container">
     <div class="products-section">
         <div class="shop-grid">
@@ -52,6 +53,24 @@
                     <p class="product-description">RPG futuriste immersif dans la ville de Night City. Créez votre personnage, explorez des quartiers vivants et vivez des histoires complexes.</p>
                     <p class="product-price">59,99€</p>
                     <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/" target="_blank" class="buy-btn">Voir sur Steam</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <video id="nggyu-video" width="100%" height="280" autoplay controls style="background: #000;">
+                        <source src="{% static 'nggyu.mp4' %}" type="video/mp4">
+                    </video>
+                    <script>
+                        document.getElementById('nggyu-video').volume = 1;
+                    </script>
+                </div>
+                <div class="product-info">
+                    <h3>Never Gonna Give You Up</h3>
+                    <p class="product-source">Local Video</p>
+                    <p class="product-description">Un classique incontournable du web. Découvrez le clip légendaire qui a marqué l'histoire d'Internet. Attention, autoplay activé !</p>
+                    <p class="product-price">Gratuit</p>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="buy-btn">Regarder sur YouTube</a>
                 </div>
             </div>
         </div>

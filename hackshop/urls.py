@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from hackshop import views
 
 urlpatterns = [
@@ -13,3 +15,6 @@ urlpatterns = [
     path('backup/', views.backup),
     path('manage_bans/', views.manage_bans),
 ]
+
+if not settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
